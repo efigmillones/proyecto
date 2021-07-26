@@ -1,0 +1,73 @@
+
+    <br>
+    <div class="container">
+        <div class="col" *ngFor="let producto of InfoProducto">
+            <div class="row">
+                <div class="col-12">
+                    <p class='title-barra'>Información del Producto</p>   
+                </div>
+            </div>            
+            <div class="row">
+                <div class="col-5">
+                    <div class="card card-square">
+                        <img src="{{ producto['IMAGEN 450'] }}" alt="" class="src">
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="card card-square">
+                        <div class="container">
+                            <p class='title-marca'> {{ producto.MARCA }}</p>
+                            <p class='title-codigo'> Codigo: {{ producto.CODIGO }}</p>
+                            <p class='title-nombre'>{{ producto.NOMBRE | titlecase}}</p>
+                            <p class='card-title-top'>{{ producto.DESCRIPCION | titlecase}}</p>
+                            <p class='precio-venta align-rigth'>{{ producto["PRECIO VENTA"] | currency:'$' : 'symbol' : '1.0-0'}}</p>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button class="btn btn-primary col-12"> Agregar al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-square card-detalles">
+                        <p class='title-barra'>Detalles del producto</p>
+                        <div class="row cont-detalle">
+                            <div class="mb-3 row">
+                                <label for="staticEmail" class="col-sm-2 col-form-label">Categoria</label>
+                                <div class="col-sm-10">
+                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ producto.CATEGORIA | titlecase}}">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="staticEmail" class="col-sm-2 col-form-label">Estado</label>
+                                <div class="col-sm-10">
+                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ producto.ESTADO }}">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="staticEmail" class="col-sm-2 col-form-label">Tipo Fabricante</label>
+                                <div class="col-sm-10">
+                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ producto.TIPOFABRICANTE | titlecase }}">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="staticEmail" class="col-sm-2 col-form-label">Linea</label>
+                                <div class="col-sm-10">
+                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ producto.LINEA | titlecase }}">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="staticEmail" class="col-sm-2 col-form-label">Marca</label>
+                                <div class="col-sm-10">
+                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ producto.MARCA | titlecase}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>    
+        </div>
+    </div>

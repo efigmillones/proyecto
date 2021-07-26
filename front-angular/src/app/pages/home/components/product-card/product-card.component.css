@@ -1,0 +1,45 @@
+.precio-venta {
+    color:orangered;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.card-img-top {
+    padding: 30px 30px;
+    width:75%;
+    margin:auto;
+    cursor:pointer;
+}
+
+.card-title-top {
+    padding: 2px 10px;
+    font-size: 13px;
+    min-height: 40px;
+    cursor:pointer;
+}
+
+.title-marca {
+    padding:2px 10px;
+    font-size:13px;
+    color:chocolate;
+    margin-bottom: 0px;
+    cursor:pointer;
+}
+
+.text-description {
+    font-size:10px;
+    min-height: 45px;
+    cursor:pointer;
+}
+
+.card-square {
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    box-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+    border: none;
+    margin-bottom: 30px;
+}

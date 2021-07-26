@@ -1,0 +1,40 @@
+<div class="row">
+    <p class='title-barra'>Catálogo de Productos</p>
+</div>
+
+
+
+    <form [formGroup]="profileForm" (ngSubmit)="getData()">
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="form-label">Categorias</label>
+                    <select id="txt_categoria" class="form-select" name="categoria" formControlName="categoria">
+                        <option value="">Todas</option>
+                        <option value="{{ categorias }}" *ngFor="let categorias of listaCategorias">{{ categorias }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="form-label">Marcas</label>
+                            <select name="" id="" class="form-select" formControlName="marca">
+                                <option value="">Todas</option>
+                                <option value="{{ marcas }}" *ngFor="let marcas of listaMarcas">{{ marcas }}</option>
+                            </select>
+                    </div>
+                </div>        
+            </div>
+            <div class="col-4">
+                <label for="exampleInputEmail1" class="form-label">&nbsp;</label>
+                <input class="form-control mr-sm-2" type="search" formControlName="nombre" placeholder="Buscar..." aria-label="Search">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12 text-center">
+                <button type="submit" class="btn-sm btn btn-primary" id="search-btn">Buscar</button>
+            </div>
+        </div>
+    </form>

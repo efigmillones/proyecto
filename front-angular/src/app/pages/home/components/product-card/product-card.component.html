@@ -1,0 +1,51 @@
+    <div class="col">
+      <div class="card h-100 card-square">
+        <p class='title-marca'>{{ producto.MARCA }}</p>
+        <div class="row">
+            <div class="col-12">
+                <p class='card-title-top'>{{ producto.NOMBRE | titlecase}}</p>
+            </div>
+        </div>
+        <img src="{{ producto['IMAGEN 150'] }}" class="card-img-top" alt="..." (click)="verProducto(producto.CODIGO)">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="precio-venta">{{ producto["PRECIO VENTA"] | currency:'$' : 'symbol' : '1.0-0'}}</p>
+                </div>
+            </div>
+          
+          <p class="card-text text-description">{{ producto.DESCRIPCION | titlecase}}</p>
+          
+            <div class="col-12">        
+                <button class="btn btn-sm btn-primary col-12">Agregar al carrito</button>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- <div class="col-3">
+        <div class="card">
+            <img class="card-img-top" src="{{ producto['IMAGEN 150'] }}" alt="Card image cap">
+            <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">{{ producto.NOMBRE }}</p>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <td>
+        <img src='{{ producto["IMAGEN 150"] }}' alt="">
+    </td>
+    <td>
+        {{ producto.NOMBRE }}
+    </td>
+    <td>
+        {{ producto["PRECIO VENTA"] }}
+    </td>
+    <td>
+        {{ producto.CATEGORIA }}
+    </td>
+    <td>
+
+    </td> -->

@@ -1,0 +1,13 @@
+.title-barra {
+    border-bottom: solid;
+    border-bottom-color: currentcolor;
+    border-bottom-width: medium;
+    border-bottom-color: currentcolor;
+    border-bottom-width: medium;
+    border-color: cornflowerblue;
+    border-width: 2px;
+    padding: 13px 0px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
