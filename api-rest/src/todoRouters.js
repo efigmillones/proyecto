@@ -8,9 +8,11 @@
 
 // get and post request for /todos endpoints
         app
-        .route("/todos")
-        .get(todoList.listAllTodos)
-        // .post(todoList.createNewTodo);
+        .route("/productos")
+        .get(todoList.productos)
+
+        app.route("/getProductoxCodigo/:codigo")
+        .get(todoList.getProductoxCodigo);
 
 // obtiene filtros
 
@@ -19,6 +21,9 @@
 
         app.route("/marcas")
         .get(todoList.listarMarcas);
+
+        app.route("/getProductosFiltrados/:categoria")
+        .get(todoList.listarFiltroProductos)
 
 // put and delete request for /todos endpoints
         app

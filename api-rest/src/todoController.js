@@ -4,14 +4,30 @@ const  Todo = require("./todoModel.js");
 // DEFINE CONTROLLER FUNCTIONS
 
 // Listar todos los productos
-exports.listAllTodos = (req, res) => {
-Todo.find({}, (err, todo) => {
-if (err) {
-res.status(500).send(err);
-}
-console.log(todo);
-res.status(200).json(todo);
-});
+exports.productos = (req, res) => {
+
+    let query = [];
+    if (req.query.hasOwnProperty("nombre") && req.query.nombre.length > 0) query.push({ NOMBRE: {$regex:req.query.nombre.toUpperCase()}});
+    if (req.query.hasOwnProperty("marca") && req.query.marca.length > 0) query.push({ MARCA: req.query.marca });
+    if (req.query.hasOwnProperty("categoria") && req.query.categoria.length > 0) query.push({ CATEGORIA: req.query.categoria });
+    if (query && query.length > 0){
+
+        Todo.find({$and:query}, (err, todo) => {
+        if (err) {
+            res.status(500).send(err);
+        }
+            console.log(todo);
+            res.status(200).json(todo);
+        });
+    } else {
+        Todo.find({}, (err, todo) => {
+        if (err) {
+            res.status(500).send(err);
+        }
+            console.log(todo);
+            res.status(200).json(todo);
+        });
+    }
 };
 
 // Obtener un producto en base a su identificador
@@ -30,9 +46,23 @@ exports.listCategories = (req, res) => {
     });
 };
 
+// Obtener un producto en base a su codigo
+exports.getProductoxCodigo = (req, res) => {
+    // console.log(req.params.nombre);
+    Todo.find({ CODIGO: req.params.codigo}, function (err, todo) {
+        res.status(200).json(todo);
+    });
+};
+
 // Obtener las categorias de los productos
 exports.listarCategorias = (req, res) => {
     Todo.find().distinct('CATEGORIA', function(error, todo) {
+        res.status(200).json(todo);
+    });
+};
+
+exports.listarFiltroProductos = (req, res) => {
+    Todo.find({ CATEGORIA: req.params.categoria}, function (err, todo) {
         res.status(200).json(todo);
     });
 };
